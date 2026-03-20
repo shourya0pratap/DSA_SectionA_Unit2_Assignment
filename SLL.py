@@ -17,6 +17,15 @@ class SinglyLinkedList:
                 curr = curr.next
             curr.next = newNode
             
+    def remove(self, ind):
+        if ind == 0:
+            self.head = self.head.next
+        else:
+            curr = self.head
+            for i in range(1,ind):
+                curr = curr.next
+            curr.next = curr.next.next
+
 def main():
     LL = SinglyLinkedList()
     LL.add(1)
