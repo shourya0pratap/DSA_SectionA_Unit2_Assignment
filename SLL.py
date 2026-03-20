@@ -25,10 +25,22 @@ class SinglyLinkedList:
             for i in range(1,ind):
                 curr = curr.next
             curr.next = curr.next.next
+            
+    def display(self):
+        if not self.head:
+            print("[ ]")
+        out = ""
+        curr = self.head
+        while curr:
+            out += str(curr.val) + " , "
+            curr = curr.next
+        print(f"[{out[:-3]}]")
 
 def main():
     LL = SinglyLinkedList()
     LL.add(1)
+    LL.add(2)
+    LL.display()
 
 if __name__ == "__main__":
     main()
