@@ -24,7 +24,7 @@ class SinglyLinkedList:
             curr = self.head
             for i in range(1,ind):
                 curr = curr.next
-            curr.next = curr.next.next
+            curr.next = curr.next.next 
             
     def display(self):
         if not self.head:
@@ -38,8 +38,9 @@ class SinglyLinkedList:
 
 def main():
     LL = SinglyLinkedList()
-    LL.add(1)
-    LL.add(2)
+    for i in range(1,6):
+        LL.add(i)
+    LL.remove(1)
     LL.display()
 
 if __name__ == "__main__":
