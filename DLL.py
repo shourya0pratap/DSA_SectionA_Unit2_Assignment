@@ -34,7 +34,34 @@ class DoublyLinkedList:
             self.tail = newNode
     
     def delete_at_position(self, pos):
-        pass
+        if not self.head:
+            return
+
+        curr = self.head
+        for i in range(pos):
+            if curr.next:
+                curr = curr.next
+            else:
+                print("Position out of bounds")
+                return
+
+        if curr.prev:
+            curr.prev.next = curr.next
+        else:
+            self.head = curr.next
+
+        if curr.next:
+            curr.next.prev = curr.prev
+        else:
+            self.tail = curr.prev
+
+    def display(self):
+        elems = []
+        curr = self.head
+        while curr:
+            elems.append(str(curr.val))
+            curr = curr.next
+        print(" <-> ".join(elems) if elems else "Empty List")
     
 def main():
     DLL = DoublyLinkedList()
