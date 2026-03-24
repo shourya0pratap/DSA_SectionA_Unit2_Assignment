@@ -10,7 +10,12 @@ class DoublyLinkedList:
         self.tail = None
         
     def add(self, val):
-        pass
+        newNode = Node(val)
+        if not self.head:
+            self.head = self.tail = newNode
+        self.tail.next = newNode
+        newNode.prev = self.tail
+        self.tail = newNode
     
     def insert_after_node(self, target, x):
         pass
