@@ -18,7 +18,20 @@ class DoublyLinkedList:
         self.tail = newNode
     
     def insert_after_node(self, target, x):
-        pass
+        curr = self.head
+        while curr and curr.val != target:
+            curr = curr.next
+        if not curr:
+            print("Error: Value not found in list")
+            return
+        newNode = Node(x)
+        newNode.next = curr.next
+        newNode.prev = curr
+        
+        if curr.next:
+            curr.next.prev = curr.next
+        else:
+            self.tail = newNode
     
     def delete_at_position(self, pos):
         pass
