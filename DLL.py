@@ -9,7 +9,7 @@ class DoublyLinkedList:
         self.head = None
         self.tail = None
         
-def insert_after_node(self, target, x):
+    def insert_after_node(self, target, x):
         curr = self.head
         while curr and curr.val != target:
             curr = curr.next
@@ -61,6 +61,10 @@ def insert_after_node(self, target, x):
     
 def main():
     DLL = DoublyLinkedList()
+    DLL.head = DLL.tail = Node(0)
+    for i in range(5):
+        DLL.insert_after_node(i,i+1)
+    DLL.display()
     
 if __name__ == "__main__":
     main()
