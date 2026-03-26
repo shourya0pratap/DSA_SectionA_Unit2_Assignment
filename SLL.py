@@ -41,8 +41,8 @@ class SinglyLinkedList:
 def main():
     LL = SinglyLinkedList()
     LL.insert_at_end(1)
-    # for i in range(1,6):
-    #     LL.insert_at_end(i)
+    for i in range(1,6):
+        LL.insert_at_end(i)
     LL.delete_by_value(1)
     LL.traverse()
 
