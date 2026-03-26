@@ -23,6 +23,16 @@ class StackSLL:
         if not self.head:
             return "Empty"
         return self.head.val
+    
+    def traverse(self):
+        if not self.head:
+            print("[ ]")
+        out = ""
+        curr = self.head
+        while curr:
+            out += str(curr.val) + " , "
+            curr = curr.next
+        print(f"[{out[:-3]}]")
 
 def main():
     LL = StackSLL()
@@ -30,6 +40,7 @@ def main():
         LL.push(i)
     print(LL.pop())
     print(LL.peek())
+    LL.traverse()
 
 if __name__ == "__main__":
     main()

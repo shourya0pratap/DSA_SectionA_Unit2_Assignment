@@ -4,6 +4,8 @@ def checkParenthesis(expr):
         if ch in "{[(":
             stk.append(ch)
         if ch in "}])":
+            if not stk:
+                return False
             top = stk[-1]
             match ch:
                 case "}":
